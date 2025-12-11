@@ -1,0 +1,49 @@
+IDS algorithm for 1000 time period and 4 models
+
+model: 1 -17.00 
+model: 2 16.00 
+model: 3 96.90 
+model: 4 0.73 
+IDS Regret avg. over models = 24.16 
+187.000714 seconds (2.20 G allocations: 96.005 GiB, 4.13% gc time)
+
+model: 1 11.00 
+model: 2 68.00 
+model: 3 27.90 
+model: 4 7.73 
+TS_decay_greedy_knownT_1_eps Regret avg. over models = 28.66 
+  5.005360 seconds (36.06 M allocations: 2.766 GiB, 4.66% gc time)
+
+alg with epsi 1 to 2/10, eps/1-eps
+model: 1 55.00 
+model: 2 230.00 
+model: 3 75.04 
+model: 4 48.26 
+model: 5 40.01 
+model: 6 6.98 
+model: 7 10.60 
+model: 8 0.12 
+model: 9 26.08 
+model: 10 88.34 
+model: 11 -3.69 
+model: 12 71.67 
+model: 13 33.61 
+model: 14 11.44 
+model: 15 17.07 
+model: 16 55.49 
+model: 17 59.00 
+model: 18 106.24 
+model: 19 -36.48 
+model: 20 -42.80 
+model: 21 -0.09 
+model: 22 41.15 
+model: 23 32.25 
+model: 24 9.36 
+model: 25 41.13 
+model: 26 156.91 
+model: 27 101.78 
+model: 28 43.94 
+model: 29 5.37 
+model: 30 11.30 
+model: 31 62.78 
+model: 32 9.93 

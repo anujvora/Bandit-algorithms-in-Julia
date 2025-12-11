@@ -1,0 +1,46 @@
+Seed = 1, Regret = 116.00 
+Seed = 2, Regret = 77.00 
+Seed = 3, Regret = -19.00 
+Seed = 4, Regret = 75.00 
+Seed = 5, Regret = 35.00 
+Seed = 6, Regret = 78.00 
+Seed = 7, Regret = 61.00 
+Seed = 8, Regret = -38.00 
+Seed = 9, Regret = 49.00 
+Seed = 10, Regret = 128.00 
+Seed = 11, Regret = 11.00 
+Seed = 12, Regret = 82.00 
+Seed = 13, Regret = 976.00 
+Seed = 14, Regret = 74.00 
+Seed = 15, Regret = 118.00 
+Seed = 16, Regret = 99.00 
+Seed = 17, Regret = 69.00 
+Seed = 18, Regret = 1054.00 
+Seed = 19, Regret = 46.00 
+Seed = 20, Regret = 918.00 
+Seed = 21, Regret = 961.00 
+Seed = 22, Regret = 62.00 
+Seed = 23, Regret = 45.00 
+Seed = 24, Regret = 91.00 
+Seed = 25, Regret = 100.00 
+
+Seed = 1, Regret = 36.00 
+Seed = 2, Regret = 83.00 
+Seed = 3, Regret = 5.00 
+Seed = 4, Regret = 95.00 
+Seed = 5, Regret = 49.00 
+Seed = 6, Regret = 81.00 
+Seed = 7, Regret = 63.00 
+Seed = 8, Regret = -34.00 
+Seed = 9, Regret = 39.00 
+Seed = 10, Regret = 105.00 
+1 TS_decay_greedy_knownT Regret avg. over seeds = 52.20 
+ 56.439457 seconds (442.36 M allocations: 34.015 GiB, 3.28% gc time, 0.73% compilation time: 27% of which was recompilation)
+
+Seed = 1, Regret = 39.00 
+Seed = 2, Regret = 80.00 
+Seed = 3, Regret = -16.00 
+Seed = 4, Regret = 95.00 
+Seed = 5, Regret = 30.00 
+1 TS_decay_greedy_knownT Regret avg. over seeds = 45.60 
+ 36.283623 seconds (262.77 M allocations: 19.307 GiB, 6.51% gc time, 2.16% compilation time: 15% of which was recompilation)

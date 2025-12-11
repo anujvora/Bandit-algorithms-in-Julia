@@ -1,0 +1,69 @@
+
+function MOTS_alg(arms,seed_val,hori)
+    
+    Random.seed!(seed_val)
+    curr_time = 1
+    num_arms = length(arms)
+    arm_chosen = 1
+    arms_index = 1:length(arms)
+    # tot_rew =  zeros((hori,length(arms)))
+    tot_rew =  zeros((hori,num_arms))
+    rewards = zeros((hori,length(arms)))
+    times_sampled = zeros((num_arms))
+    # println(times_sampled)
+    # times_sampled_hori = zeros((hori,length(arms)))
+    # alpha_par = zeros((num_arms))
+    # beta_par = zeros((num_arms))
+    variance_par = zeros((num_arms))
+    gaussian_dist_samp = zeros((num_arms))
+    tau_samp = zeros((num_arms))
+    #kl_ucb = zeros((hori,length(arms)))
+    emp_means =  zeros((hori,length(arms)))
+
+    alpha = 4
+    rho = 3/4
+    # threshold = zeros((hori,num_arms))
+
+    # all_arms_list = []
+    all_arms_list = 1:num_arms
+    # println(all_arms_list)
+    for a in all_arms_list
+        # @show a
+        rewards[curr_time,a] = rand(Normal(arms[a],1))
+        tot_rew[curr_time,a] = tot_rew[curr_time,a] + rewards[curr_time,a]
+        times_sampled[a] = times_sampled[a] + 1
+        curr_time = curr_time + 1
+    end
+    
+    # main body of algorithm
+    # curr_time = 2
+    while curr_time <= hori
+
+            # @show alpha_par
+        emp_means[curr_time,:] = tot_rew[curr_time-1,:]./times_sampled
+        variance_par = 1 ./(rho*times_sampled)
+        gaussian_dist_samp = rand.(Normal.(emp_means[curr_time,:] ,variance_par))
+        tau_samp = emp_means[curr_time,:] .+ ((alpha ./ times_sampled) .* max.(0,log.(hori ./(num_arms*times_sampled))) ).^(1/2)
+
+        clipped_samp = max.(gaussian_dist_samp, tau_samp)
+#            print(beta_dist_samp[curr_time])
+        # first_argmax = argmax(beta_dist_samp[:])
+        # all_argmax = argwhere(beta_dist_samp[:] == beta_dist_samp[curr_time,first_argmax])
+        # all_argmax = transpose(all_argmax)
+        arm_chosen = argmax(clipped_samp)
+
+        # @show arm_chosen
+        rewards[curr_time,arm_chosen] = rand(Normal(arms[arm_chosen],1))
+        
+        tot_rew[curr_time,:] = tot_rew[curr_time-1,:] + rewards[curr_time,:]
+        # @show tot_rew[curr_time,:],rewards[curr_time,arm_chosen]
+        times_sampled[arm_chosen] = times_sampled[arm_chosen] + 1
+        # times_sampled_hori[curr_time,:] = times_sampled
+
+        # emp_means[curr_time] = divide(tot_rew[curr_time],times_sampled)
+        curr_time = curr_time + 1
+    end
+    # @show sum(tot_rew,dims = 2), sum(tot_rew,dims = 2)[hori]
+    return(sum(tot_rew,dims = 2)) #,times_sampled_hori)
+
+end
