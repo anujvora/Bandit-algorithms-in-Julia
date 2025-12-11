@@ -4,10 +4,10 @@ Multi-armed bandits capture the essence of tradeoffs between exploration and exp
 Currently implemented algorithms:
 
 - Thompson Sampling
-- $\epsilon-$Thompson Sampling
+- $\epsilon-$ Thompson Sampling
 
 TODO:
-- $\epsilon-$Greedy
+- $\epsilon-$ Greedy
 - Upper Confidence Bound (UCB)
 - Bayesian UCB
 - Information Directed Sampling (IDS)
