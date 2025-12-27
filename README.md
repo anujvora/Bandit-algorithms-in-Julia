@@ -6,6 +6,11 @@ Currently implemented algorithms:
 - Thompson Sampling
 - $\epsilon-$ Thompson Sampling
 
+Code optimization:
+- Used pre-allocated arrays to reduce memory allocation and improve performance.
+- Used loops instead of slicing
+- Type specification for lists
+
 TODO:
 - $\epsilon-$ Greedy
 - Upper Confidence Bound (UCB)
